@@ -40,3 +40,7 @@ nbproject
 node_modules
 dist
 .rvmrc
+
+# Deployment #
+#####################
+deployment/*
