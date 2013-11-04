@@ -828,23 +828,31 @@
 
         <section>
           <h2>Prepare the Development Environment</h2>
-          <h3>Install virtual machine and provision</h3>
+          <h4>Install virtual machine and provision</h4>
           <ul>
             <li>OS, LAMP, WordPress</li>
-            <li>Ruby, Sass, Compass</li>
-            <li>Share folder with virtual machine</li>
+            <li>Ruby, Sass / Compass</li>
+            <li>Share local folder with virtual machine</li>
           </ul>
-          <h3>We’re all on the same page </h3>
-          <ul>
-            <li>Development environments match</li>
-            <li>Frameworks all the same version, less room for conflict</li>
-          </ul>
-          <h3>Package Box for sharing</h3>
-          <ul>
-            <li>$: vagrant package</li>
-          </ul>
+          <div class="fragment" data-fragment-index="0">
+            <h4>We’re all on the same page</h4>
+            <ul>
+              <li>Development environments match</li>
+              <li>Frameworks all the same version, less room for conflict</li>
+            </ul>
+          </div>
+          <div class="fragment" data-fragment-index="1">
+            <h4>Package Box for sharing</h4>
+            <pre>
+              <code data-trim class="bash">$: vagrant package</code>
+            </pre>
+            <ul>
+              <li>Upload to AWS S3</li>
+              <li>Add the location to Vagrantfile</li>
+            </ul>
+          </div>
         </section>
-
+  
         <section>
           <h2>A Quick Word About Source Control</h2>
           <h3>One of the best ways to enhances collaboration</h3>
