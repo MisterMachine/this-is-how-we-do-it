@@ -997,11 +997,34 @@
           <h2>Concatenate and Compress</h2>
           <h3>We like Grunt for this</h3>
           <ul>
-            <li>Require-js build</li>
-            <li>Cache busting</li>
-            <li>Start working in Sass</li>
+            <li>Automated task runner: Minification, concatenation, etc</li>
             <li>Allows you to develop in uncompressed, easy to read JS files</li>
+            <li>Server single, minified file on production</li>
           </ul>
+          <img src="assets/img/grunt-js.png">
+        </section>
+
+        <section data-background-color="rgba(255, 122, 0, 0.6)">
+
+          <h2>Grunt Configuration</h2>
+          <h3>Load scripts conditionally</h3>
+          <pre><code style="php">
+  if( ENVIRONMENT === 'local' ) {
+
+    // Un-minified scripts.js + plugin files for easier development
+    wp_enqueue_script( 'jquery-plugins', 'theme/assets/js/_plugins.js',
+      array('jquery'), false, true );
+    wp_enqueue_script( 'site-scripts', 'theme/assets/js/_scripts.js',
+      array('jquery', 'jquery-plugins, false, true );
+
+  } else {
+
+    // minified app.js with plugins combined in one file for production
+    wp_enqueue_script( 'site-scripts', 'theme/assets/js/scripts.min.js',
+      array('jquery'), false, true);
+
+  }
+          </code></pre>
         </section>
 
         <section data-background-color="rgba(255, 122, 0, 0.6)">
