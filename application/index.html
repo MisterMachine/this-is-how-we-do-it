@@ -1129,7 +1129,6 @@ p2p_register_connection_type( array(
 
         <section>
           <h2>Automated deploy FTW!</h2>
-          <h3>Demo Time!</h3>
           <ul>
             <li>Capistrano for deployment</li>
             <li>Multi environment deploy</li>
@@ -1137,13 +1136,76 @@ p2p_register_connection_type( array(
           </ul>
         </section>
 
-        <!--section>
-          <h2>Usability Testing</h2>
+        <section>
+          <h2>Capistrano</h2>
           <ul>
-            <li>Interviews with users outside the team</li>
-            <li>UX updates and refinements based on findings</li>
+            <li>Upload only files that have changed</li>
+            <li>Whoops!: One command to rollback<pre><code class="bash">$ cap deploy:rollback</code></pre></li>
+            <li>Remote control of server from local computer</li>
+            <li>Easily deploy files under version control (code) separate from content (image uploads)</li>
+            <li>Multistage: Deploy to multiple servers</li>
           </ul>
-        </section-->
+        </section>
+
+        <section>
+          <h2>Capistrano Setup</h2>
+          <img src="assets/img/cap-folder-structure.png" style="display:block;float:left;width:650px;">
+          <pre style="float:right;width:280px;"><code class="bash">
+  $ cap deploy:setup
+  $ cap deploy:check
+  $ cap deploy
+  $ cap deploy:rollback
+  $ cap production deploy
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Capistrano Config</h2>
+          <pre><code class="ruby">
+  # Application name - used on shop for deployment directory
+  set :application, "application-name"
+
+  # Options
+  set :use_sudo, false
+  set :keep_releases, 5
+
+  # Source Control - defaults to git
+  set :scm, :git
+  # Repository
+  set :repo_user, "me"
+  set :repo_name, "project"
+  set :repository, "git@github.com:#{repo_user}/#{repo_name}.git"  # Your clone URL
+  # Default repository branch to checkout
+  set :branch, "master"
+
+  set :deploy_to, "/var/www/#{application}"
+
+  # Hooks that specify when to run tasks
+  after "deploy:update_code", "shared:make_symlinks", "shared:deploy_js"
+  after "deploy", "deploy:cleanup"
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Capistrano Tasks</h2>
+          <pre><code class="ruby">
+  namespace :shared do
+    desc "Symlinking files"
+    task :make_symlinks, :roles => :web do
+      run "ln -nfs #{shared_path}/env.php #{release_path}/env.php"
+      run "ln -nfs #{shared_path}/uploads #{release_path}/wp-content/uploads"
+    end
+    desc "Minify and upload css and js files"
+    task :deploy_assets, :roles => :web do
+      run_locally( "cd ..; grunt")
+      upload( "#{theme_path}/lib/js/scripts.min.js",
+        "#{release_path}/application/wp-content/themes/mytheme/lib/js/scripts.min.js" )
+      upload( "#{theme_path}/style.min.css",
+        "#{release_path}/application/wp-content/themes/mytheme/style.min.css" )
+    end
+  end
+          </code></pre>
+        </section>
 
         <section>
           <h2>Release is optional</h2>
