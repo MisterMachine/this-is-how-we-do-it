@@ -96,7 +96,7 @@
             <ul>
               <li>Antonio, Grant, Jesse, and I have collaborated on several design and development projects over the last year.</li>
               <li>Over that time we have consistently examined our workflows.</li>
-              <li>Tonight we'll take a look at some real life case studies of the work we've done together</li>
+              <li>Tonight we'll be reviewing some real life examples of how we build collaboration when working together.</li>
             </ul>
           </aside>
         </section>
@@ -904,14 +904,36 @@
         <section data-background-color="rgba(255, 122, 0, 0.6)">
 
           <h2>The Development Environment</h2>
+          <ol>
+            <li class='fragment'>Pull down project</li>
+            <li class="fragment">Install Dependencies (Sass + Compass)</li>
+            <li class='fragment'>Share Database dump</li>
+            <li class="fragment">Synch Database</li>
+            <li class="fragment">Pray<span class="fragment">, refresh browser</span><span class="fragment">, troubleshoot</span></li>
+            <li class="fragment">Repeat step 5</li>
+          </ol>  
+          <br /><br />
+          <h3 class="fragment">Time consuming</h3>
+          
+          <aside class='notes'>
+            <p>in the past</p>
+            <ul>
+              <li>Pull down project</li>
+              <li>Share database dump</li>
+              <li>Install dependencies</li>
+              <li>Synch Database</li>
+              <li>Pray + Troubleshoot</li>
+              <li>Time consuming process</li>
+            </ul>
+          </aside>
         </section>
         
         <section data-background-color="rgba(255, 122, 0, 0.6)">
-          <h2>Install and provision virtual machine</h2>
+          <h2>Instead, we use Virtual Machines</h2>
           <ul>
-            <li>OS, LAMP, PHP Modules</li>
-            <li>Ruby, Sass + Compass</li>
-            <li>Share local folder with virtual machine, work in your desired editor</li>
+            <li>Easier way to replicate and share development environments</li>
+            <li>Dependencies like Ruby, Sass + Compass are installed on VM</li>
+            <li>Local project folder is shared with VM, everyone continues using desired code editor</li>
           </ul>
          </section>
          
@@ -921,20 +943,9 @@
               <li>Development environments match</li>
               <li>Frameworks all the same version, less room for conflict</li>
             </ul>
-          
-          <div class="fragment" data-fragment-index="1">
-            <h4>Package Box for sharing</h4>
-            <p>Upload to AWS S3</p>
-            <pre>
-              <code data-trim class="bash">$: vagrant package</code>
-            </pre>
-          </div>
-          
-          <aside class='notes'>
-            <ul>
-              <li>Determine and match dependencies with remote server</li>
-              <li>Provision local dev environment as closely as possible</li>
-              <li>Benefits:</li>
+            <aside class="notes">
+              <ul>
+                <li>Benefits:</li>
               <li>
                 <ol>
                   <li>On the same page</li>
@@ -942,43 +953,53 @@
                   <li>No need to know how to run tools</li>
                 </ol>
               </li>
+              </ul>
+            </aside>
+        </section>
+        <section>
+          
+            <h4><img src="/assets/img/vagrant-logo.png" width='248' height='64' alt="Use Vagrant" /></h4>
+            
+          
+            <p class="fragment">Build Virtual Machine and provision</p>
+            
+            <pre class="fragment">
+              <code data-trim class="bash">$: vagrant package</code>
+            </pre>
+            
+            <p class="fragment">Upload to AWS S3</p>
+            
+            <aside class='notes'>
+            <ul>
+              <li>Determine and match dependencies with remote server</li>
+              <li>Provision local dev environment as closely as possible</li>
+              <li>Package box for saring</li>
+              <li>Upload to Remote server</li>
             </ul>
           </aside>
-          
+        
         </section>
-          
         <section data-background-color="rgba(255, 122, 0, 0.6)">
           <h2>Get the team into the dev environment</h2>
           <img src="/assets/img/vagrant-logo.png" width='248' height='64' />
           <img src="/assets/img/vbox-logo.png" width='140' height='180' />
-          <ol>
-            <li>Download and Install Vagrant + VirtualBox</li>
-            <li>git pull latest version</li>
+          <p>Install Vagrant + VirtualBox</p>
+          <p>then:</p>
+          <pre>
+            <code class="bash">$: git pull origin master</code>
+          </pre>
           </section>
           <section data-background-color="rgba(255, 122, 0, 0.6)">
           <div>
             <pre>
-              <code class="bash">$: vagrant up</code>
+              <code class="bash">$: vagrant up --provision</code>
             </pre>
             <ul>
-              <li>Machine downloads and starts</li>
-              <li>Front-end developer connects with vagrant environment</li>
-              <li>Start working in Sass</li>
-              <li>Compass is already watching project</li>
-            </ul>
+              <li>Machine downloads, starts and provisions</li>
+              <li class="fragment">Compass is already watching project</li>
+              <li class="fragment">Developers can start working</li>
+            <ul>
           </div>
-        </section>
-
-        <section data-background-color="rgba(255, 122, 0, 0.6)">
-          <h2>A Quick Intermission on Source Control</h2>
-          <h4>One of the best ways to enhances collaboration</h4>
-          <ul>
-            <li>Add project files</li>
-            <li>Add vagrant config</li>
-            <li>Track all changes in a git repository</li>
-            <li>Essential for collaborative development</li>
-            <li>Protects your client’s code</li>
-          </ul>
         </section>
 
         <section data-background-color="rgba(255, 122, 0, 0.6)">
