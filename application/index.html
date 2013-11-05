@@ -59,13 +59,11 @@
       <section>
         <section>
           <h2>So many new shiny</h2>
-          <ul>
-            <li>Content Strategy, Mobile First</li>
-            <li>Backbone, Ember</li>
-            <li>Compass, Sass</li>
-            <li>Bootstrap, Foundation</li>
-            <li>Grunt, Capistrano</li>
-          </ul>
+          <p class="fragment">Content Strategy, Mobile First</p>
+          <p class="fragment">Backbone, Ember</p>
+          <p class="fragment">Compass, Sass</p>
+          <p class="fragment">Bootstrap, Foundation</p>
+          <p class="fragment">Grunt, Capistrano</p>
           <aside class="notes">
             <ul>
               <li>With so many of new tools, frameworks, and techniques out there it’s easy to lose focus on the big picture.</li>
@@ -74,9 +72,10 @@
         </section>
 
         <section>
-          <h2>Design</h2>
-          <h2>Interface</h2>
-          <h2>Development</h2>
+          <h2>Building Blocks of Collaboration</h2>
+          <h3 class="fragment">Design</h3>
+          <h3 class="fragment">Interface</h3>
+          <h3 class="fragment">Development</h3>
           <aside class="notes">
             <ul>
               <li>Better to focus on the building blocks of a project that are shared between traditional silos</li>
@@ -380,7 +379,7 @@
         <section data-background-color="rgba( 180, 50, 140, 0.6 )">
           <h2>Content Hierarchy</h2>
           <ul>
-            <li>Finding patterns of value and overlap between users</li>
+            <li>Find patterns of value and overlap between users</li>
             <li>Define the content stack with a priority outline</li>
           </ul>
         </section>
@@ -863,6 +862,50 @@
         </section>
 
         <section>
+          <h2>Great looking Meta Boxes</h2>
+          <figure>
+            <img src="assets/img/metabox.png">
+          </figure>
+        </section>
+
+        <section>
+          <h2>Clean Abstraction</h2>
+          <h3>Template Part: metabox-property.php</h3>
+
+<pre><code class="php"><p>
+  <label>&#60;?php _e('Address'); ?&#62;</label>
+  &#60;?php $mb->the_field('address_1'); ?&#62;
+  <input type="text" name="&#60;?php $mb->the_name(); ?&#62;" value="&#60;?php $mb->the_value(); ?&#62;"/>
+</p>
+<p>
+  <label>&#60;?php _e('Display Address?'); ?&#62;</label>
+  &#60;?php $mb->the_field('display_address'); ?&#62;
+  <select name="<?php $mb->the_name(); ?&#62;">
+    <option value="0" &#60;?php $mb->the_select_state( '0' ); ?&#62;>&#60;?php _e('False'); ?&#62;</option>
+    <option value="1" &#60;?php $mb->the_select_state( '1' ); ?&#62;>&#60;?php _e('True'); ?&#62;</option>
+  </select>
+</p>
+<p>
+  <label>&#60;?php _e('Google Map'); ?&#62;</label>
+  &#60;?php $mb->the_field('google_map'); ?&#62;
+  <input type="text" name="&#60;?php $mb->the_name(); ?&#62;" value="&#60;?php $mb->the_value(); ?&#62;"/>
+  <span>&#60;?php _e('Paste Google Map iframe HTML code.'); ?&#62;</span>
+</p>
+<p class="col-3">
+  <label>&#60;?php _e('Price in USD'); ?&#62;</label>
+  &#60;?php $mb->the_field('price'); ?&#62;
+  <input type="text" name="&#60;?php $mb->the_name(); ?&#62;" value="&#60;?php $mb->the_value(); ?&#62;"/>
+  <span>&#60;?php _e('Price in whole USD. Do not include "$" or ",".'); ?&#62;</span>
+</p></code></pre>
+
+        </section>
+
+
+
+
+
+
+        <section>
           <h2>Posts 2 Posts</h2>
           <ul>
             <li>Plugin written by Silviu-Cristian Burcă (scribu) and Alex Ciobica</li>
@@ -954,6 +997,8 @@
             <ul>
               <li><a title="Sass" href="http://sass-lang.com/">Sass</a></li>
               <li><a title="Compass" href="http://compass-style.org/">Compass</a></li>
+              <li><a title="WP Alchemy" href="http://www.farinspace.com/wpalchemy-metabox/">WP Alchemy</a></li>
+              <li><a title="Posts 2 Posts" href="http://wordpress.org/plugins/posts-to-posts/">Posts 2 Posts</a></li>
             </ul>
             <h3>Development</h3>
             <ul>
