@@ -717,14 +717,13 @@
               </ul>
           </div>
         </section>
-
         <section>
           <h2>Prepare the Development Environment</h2>
-          <h4>Install virtual machine and provision</h4>
+          <h4>Install and provision virtual machine</h4>
           <ul>
-            <li>OS, LAMP, WordPress</li>
-            <li>Ruby, Sass / Compass</li>
-            <li>Share local folder with virtual machine</li>
+            <li>OS, LAMP, PHP Modules</li>
+            <li>Ruby, Sass + Compass</li>
+            <li>Share local folder with virtual machine, work in your desired editor</li>
           </ul>
           <div class="fragment" data-fragment-index="0">
             <h4>We’re all on the same page</h4>
@@ -735,50 +734,56 @@
           </div>
           <div class="fragment" data-fragment-index="1">
             <h4>Package Box for sharing</h4>
+            <p>Upload to AWS S3</p>
             <pre>
               <code data-trim class="bash">$: vagrant package</code>
             </pre>
+          </div>
+          <aside class='notes'>
             <ul>
-              <li>Upload to AWS S3</li>
-              <li>Add the location to Vagrantfile</li>
+              <li>Determine and match dependencies with remote server</li>
+              <li>Provision local dev environment as closely as possible</li>
+              <li>Benefits:</li>
+              <li>
+                <ol>
+                  <li>On the same page</li>
+                  <li>No pains in setup</li>
+                  <li>No need to know how to run tools</li>
+                </ol>
+              </li>
+            </ul>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Get the team into the dev environment</h2>
+          <img src="/assets/img/vagrant-logo.png" width='248' height='64' />
+          <img src="/assets/img/vbox-logo.png" width='140' height='180' />
+          <ol>
+            <li>Download and Install Vagrant + VirtualBox</li>
+            <li>git pull latest version</li>
+          <div class="fragment" data-fragment-index="1">
+            <pre>
+              <code class="bash">$: vagrant up</code>
+            </pre>
+            <ul>
+              <li>Machine downloads and starts</li>
+              <li>Front-end developer connects with vagrant environment</li>
+              <li>Start working in Sass</li>
+              <li>Compass is already watching project</li>
             </ul>
           </div>
         </section>
-  
+        
         <section>
           <h2>A Quick Word About Source Control</h2>
-          <h3>One of the best ways to enhances collaboration</h3>
+          <h4>One of the best ways to enhances collaboration</h4>
           <ul>
             <li>Add project files</li>
             <li>Add vagrant config</li>
             <li>Track all changes in a git repository</li>
             <li>Essential for collaborative development</li>
             <li>Protects your client’s code</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>Vagrant is fun!</h2>
-          <h3>Setup Compass on server with compass watch script</h3>
-          <ul>
-            <li>Runs during vagrant up or, through vagrant script</li>
-          </ul>
-          <h3>WordPress Database update script</h3>
-          <ul>
-            <li>Updates WP database with current data-set</li>
-            <li>Sync’s Remote database or file</li>
-            <li>Updates site url with local development url</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>Time to get the team into the dev environment</h2>
-          <h3>Vagrant Up!</h3>
-          <ul>
-            <li>Machine downloads and starts</li>
-            <li>Front-end developer connects with vagrant environment</li>
-            <li>Start working in Sass</li>
-            <li>Compass is already watching project</li>
           </ul>
         </section>
 
@@ -915,6 +920,7 @@
             <li><a title="Sass" href="http://sass-lang.com/">Sass</a></li>
             <li><a title="Compass" href="http://compass-style.org/">Compass</a></li>
             <li><a title="Vagrant" href="http://www.vagrantup.com/">Vagrant</a></li>
+            <li><a title="VirtualBox" href="https://www.virtualbox.org/">VirtualBox</a></li>
             <li><a title="Grunt" href="http://www.vagrantup.com/">Grunt</a></li>
             <li><a title="Capistrano" href="http://www.capistranorb.com/">Capistrano</a></li>
             <li><a title="Dandelion" href="https://github.com/scttnlsn/dandelion">Dandelion</a></li>
