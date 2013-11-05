@@ -1132,10 +1132,17 @@ p2p_register_connection_type( array(
 
         <section>
           <h2>Automated deploy FTW!</h2>
-          <ul>
-            <li>Capistrano for deployment</li>
-            <li>Multi environment deploy</li>
-            <li>Grunt files up</li>
+          <ul style="width:45%;float:left;">
+            <h3>Managed Host</h3>
+            <li>WPEngine git deployment!</li>
+            <li>Let WPEngine handle WordPress core</li>
+            <li>Put wp-content folder in a git submodule</li>
+            <li>Use grunt to sftp deploy minified/concatenated files</li>
+          </ul>
+          <ul style="width:45%;float:right;">
+            <h3>VPS</h3>
+            <li>Capistrano for deployment over ssh</li>
+            <li>Multi environment deploy (production, staging, dev)</li>
           </ul>
         </section>
 
