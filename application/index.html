@@ -729,14 +729,15 @@
               </ul>
           </div>
         </section>
-
+          
         <section data-background-color="rgba(255, 122, 0, 0.6)">
+
           <h2>Prepare the Development Environment</h2>
-          <h4>Install virtual machine and provision</h4>
+          <h4>Install and provision virtual machine</h4>
           <ul>
-            <li>OS, LAMP, WordPress</li>
-            <li>Ruby, Sass / Compass</li>
-            <li>Share local folder with virtual machine</li>
+            <li>OS, LAMP, PHP Modules</li>
+            <li>Ruby, Sass + Compass</li>
+            <li>Share local folder with virtual machine, work in your desired editor</li>
           </ul>
           <div class="fragment" data-fragment-index="0">
             <h4>We’re all on the same page</h4>
@@ -747,39 +748,56 @@
           </div>
           <div class="fragment" data-fragment-index="1">
             <h4>Package Box for sharing</h4>
+            <p>Upload to AWS S3</p>
             <pre>
               <code data-trim class="bash">$: vagrant package</code>
             </pre>
+          </div>
+          <aside class='notes'>
             <ul>
-              <li>Upload to AWS S3</li>
-              <li>Add the location to Vagrantfile</li>
+              <li>Determine and match dependencies with remote server</li>
+              <li>Provision local dev environment as closely as possible</li>
+              <li>Benefits:</li>
+              <li>
+                <ol>
+                  <li>On the same page</li>
+                  <li>No pains in setup</li>
+                  <li>No need to know how to run tools</li>
+                </ol>
+              </li>
+            </ul>
+          </aside>
+        </section>
+          
+          <section data-background-color="rgba(255, 122, 0, 0.6)">
+          <h2>Get the team into the dev environment</h2>
+          <img src="/assets/img/vagrant-logo.png" width='248' height='64' />
+          <img src="/assets/img/vbox-logo.png" width='140' height='180' />
+          <ol>
+            <li>Download and Install Vagrant + VirtualBox</li>
+            <li>git pull latest version</li>
+          <div class="fragment" data-fragment-index="1">
+            <pre>
+              <code class="bash">$: vagrant up</code>
+            </pre>
+            <ul>
+              <li>Machine downloads and starts</li>
+              <li>Front-end developer connects with vagrant environment</li>
+              <li>Start working in Sass</li>
+              <li>Compass is already watching project</li>
             </ul>
           </div>
         </section>
-  
+
         <section data-background-color="rgba(255, 122, 0, 0.6)">
           <h2>A Quick Word About Source Control</h2>
-          <h3>One of the best ways to enhances collaboration</h3>
+          <h4>One of the best ways to enhances collaboration</h4>
           <ul>
             <li>Add project files</li>
             <li>Add vagrant config</li>
             <li>Track all changes in a git repository</li>
             <li>Essential for collaborative development</li>
             <li>Protects your client’s code</li>
-          </ul>
-        </section>
-
-        <section data-background-color="rgba(255, 122, 0, 0.6)">
-          <h2>Vagrant is fun!</h2>
-          <h3>Setup Compass on server with compass watch script</h3>
-          <ul>
-            <li>Runs during vagrant up or, through vagrant script</li>
-          </ul>
-          <h3>WordPress Database update script</h3>
-          <ul>
-            <li>Updates WP database with current data-set</li>
-            <li>Sync’s Remote database or file</li>
-            <li>Updates site url with local development url</li>
           </ul>
         </section>
 
@@ -795,6 +813,7 @@
         </section>
 
         <section data-background-color="rgba(255, 122, 0, 0.6)">
+
           <h2>Concatenate and Compress</h2>
           <h3>We like Grunt for this</h3>
           <ul>
@@ -817,9 +836,9 @@
       </section>
 
 <!-- Sprint 4 -->
-      <section>
+      <section data-background-color="rgba(255, 122, 0, 0.6)">
 
-        <section data-background-color="rgba(255, 122, 0, 0.6)">
+        <section>
           <h1>Sprint 4</h1>
           <h2>Plug it In</h2>
           <!--ul>
@@ -828,12 +847,12 @@
           </ul-->
         </section>
 
-        <section data-background-color="rgba(255, 122, 0, 0.6)">
+        <section>
           <h2>Custom Coding</h2>
           <h3>WordPress is now a robust CMS</h3>
         </section>
 
-        <section data-background-color="rgba(255, 122, 0, 0.6)">
+        <section>
           <h2>WP Alchemy: Custom Meta Boxes</h2>
           <ul>
             <li>PHP Class written by Dimas Begunoff (deem-uss begun-off)</li>
@@ -843,7 +862,7 @@
           </ul>
         </section>
 
-        <section data-background-color="rgba(255, 122, 0, 0.6)">
+        <section>
           <h2>Posts 2 Posts</h2>
           <ul>
             <li>Plugin written by Silviu-Cristian Burcă (scribu) and Alex Ciobica</li>
@@ -852,16 +871,16 @@
           </ul>
         </section>
 
-        <section data-background-color="rgba(255, 122, 0, 0.6)">
+        <section>
           <h2>Demo</h2>
           <h3>Custom Meta Boxes & Posts 2 Posts</h3>
         </section>
 
-        <section data-background-color="rgba(255, 122, 0, 0.6)">
+        <section>
           <h2>Set up your deployment and build process</h2>
         </section>
 
-        <section data-background-color="rgba(255, 122, 0, 0.6)">
+        <section>
           <h2>Automated deploy FTW!</h2>
           <h3>Demo Time!
           <ul>
@@ -879,7 +898,7 @@
           </ul>
         </section-->
 
-        <section data-background-color="rgba(255, 122, 0, 0.6)">
+        <section>
           <h2>Release is optional</h2>
           <ul>
             <li>The Internet is never done</li>
@@ -888,7 +907,7 @@
           </ul>
         </section>
 
-        <section data-background-color="rgba(255, 122, 0, 0.6)">
+        <section>
           <h2>Introducing the Product Cycle</h2>
           <ul>
             <li>Iterative, rinse and repeat cycles</li>
@@ -941,13 +960,14 @@
               <li><a title="Git" href="http://git-scm.com/">Git</a></li>
               <li><a title="Grunt" href="http://www.vagrantup.com/">Grunt</a></li>
               <li><a title="Vagrant" href="http://www.vagrantup.com/">Vagrant</a></li>
+              <li><a title="VirtualBox" href="https://www.virtualbox.org/">VirtualBox</a></li>
               <li><a title="Capistrano" href="http://www.capistranorb.com/">Capistrano</a></li>
               <li><a title="Dandelion" href="https://github.com/scttnlsn/dandelion">Dandelion</a></li>
             </ul>
           </div>
           <aside class="notes">
             <ul>
-              <li>We covered a lot of ground... don't worry.</li>
+              <li></li>
               <li></li>
             </ul>
           </aside>
