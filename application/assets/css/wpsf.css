@@ -6,8 +6,8 @@
  */
 @font-face {
   font-family: 'League Gothic';
-  src: url("../../lib/font/league_gothic-webfont.eot");
-  src: url("../../lib/font/league_gothic-webfont.eot?#iefix") format("embedded-opentype"), url("../../lib/font/league_gothic-webfont.woff") format("woff"), url("../../lib/font/league_gothic-webfont.ttf") format("truetype"), url("../../lib/font/league_gothic-webfont.svg#LeagueGothicRegular") format("svg");
+  src: url("../../vendor/reveal.js/lib/font/league_gothic-webfont.eot");
+  src: url("../../vendor/reveal.js/lib/font/league_gothic-webfont.eot?#iefix") format("embedded-opentype"), url("../../vendor/reveal.js/lib/font/league_gothic-webfont.woff") format("woff"), url("../../vendor/reveal.js/lib/font/league_gothic-webfont.ttf") format("truetype"), url("../../vendor/reveal.js/lib/font/league_gothic-webfont.svg#LeagueGothicRegular") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -154,4 +154,10 @@ body {
 .reveal blockquote {
   font-family:  Georgia, serif;
 }  
-  
+
+/*********************************************
+ * CODE
+ *********************************************/
+.reveal pre code {
+  max-height: 600px;
+}

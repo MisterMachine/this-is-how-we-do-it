@@ -912,7 +912,7 @@
         <section>
           <h2>Great looking Meta Boxes</h2>
           <figure>
-            <img src="assets/img/metabox.png">
+            <img src="assets/img/metabox.png" alt="Property Meta Box">
           </figure>
         </section>
 
@@ -948,11 +948,6 @@
 
         </section>
 
-
-
-
-
-
         <section>
           <h2>Posts 2 Posts</h2>
           <ul>
@@ -963,8 +958,38 @@
         </section>
 
         <section>
-          <h2>Demo</h2>
-          <h3>Custom Meta Boxes & Posts 2 Posts</h3>
+          <h2>Define Your Relationships</h2>
+<pre><code class="php">
+// Properties to Neighborhood Connection
+p2p_register_connection_type( array(
+  'name' => 'properties_to_neighborhood',
+  'from' => 'property',
+  'to' => 'neighborhood',
+  'cardinality' => 'many-to-one',
+) );
+// Facts to Neighborhood Connection
+p2p_register_connection_type( array(
+  'name' => 'facts_to_neighborhood',
+  'from' => 'fact',
+  'to' => 'neighborhood',
+  'cardinality' => 'many-to-one',
+) );
+// Facts to Property Connection
+p2p_register_connection_type( array(
+  'name' => 'facts_to_properties',
+  'from' => 'fact',
+  'to' => 'property',
+  'cardinality' => 'many-to-many',
+) );
+</code></pre>
+
+        </section>
+
+        <section>
+          <h2>Simple Admin For Relating Content</h2>
+          <figure>
+            <img src="assets/img/posts2posts.png" alt="Posts 2 Posts">
+          </figure>
         </section>
 
         <section>
